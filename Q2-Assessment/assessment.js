@@ -25,3 +25,44 @@ class Product{
     }
     calculateTotalValue()
 }
+
+// 6. Implement a class called Student with attributes for name, age, and grades (a
+//     list of integers). Include methods to calculate the average grade, display the
+//     student information, and determine if the student has passed (average grade >=
+//     60). Create objects for the Student class and demonstrate the usage of these
+//     methods.
+    
+//     Input: name, age, grades
+//     Output: average grade, studentinfo, ifpassed
+//     Process: create a class Student
+//                Method-> average grade
+//                    -> display info
+//                         -> if passed
+
+class Student{
+    constructor(name, age, grades){
+        this.name = name
+        this.age = age
+        this.grades = []
+
+        function getAverage(average){
+            firstGrade = 0
+            for(i in grades){
+                firstGrade.push(i)
+            }
+            average = firstGrade / grades.length
+            return average
+        }
+        function determinePass(){
+            if (average >= 60){
+                return "Student passed."
+            }
+            else{
+                return "Student did not pass"
+            }
+        }
+        function displayInformation(){
+            return "The student name is `${this.name},  `${this.age}`"
+        }
+    }
+}
