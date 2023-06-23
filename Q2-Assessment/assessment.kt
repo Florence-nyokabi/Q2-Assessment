@@ -3,6 +3,36 @@ fun main() {
     println(x.totalValue())
 }
 
+
+
+open class Story( val title: String, val moralLesson: String, val ageGroup: Int, val storyLength: String) {
+    fun displayDetails(): String {
+        return "$title is a story for children who are $ageGroup years old. It is $storyLength long and has $moralLesson moral lessons."
+    }
+}
+
+class StoryTeller( title: String, moralLesson: String, ageGroup: Int, val communityOrigin: String, val storytellerName: String, storyLength: Int
+): Story(title, moralLesson, ageGroup, storyLength.toString())
+
+class Translator(title: String,moralLesson: String,ageGroup: Int,storyLength: String, val originLanguage: String, val newLanguage: String
+) : Story(title, moralLesson, ageGroup, storyLength)
+
+fun main() {
+    val story = Story("Beautiful Nyakio", "Wealth greediness", 5, "10 pages")
+    println(story.displayDetails())
+
+    val storyteller = StoryTeller("cockroach and the snail", "Friendship", 8, "English", "Maureen", 200)
+    println(storyteller.displayDetails())
+    println("Storyteller Name: ${storyteller.storytellerName}")
+    println("Community Origin: ${storyteller.communityOrigin}")
+
+    val translator = Translator("Linet", "Community", 6, "20 pages", "swahili", "English")
+    println(translator.displayDetails())
+    println("Origin Language: ${translator.originLanguage}")
+    println("New Language: ${translator.newLanguage}")
+}
+
+
 //Question 5
 //
 //Create a class called Product with attributes for name, price, and quantity.

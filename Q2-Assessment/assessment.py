@@ -1,3 +1,63 @@
+# Question 1
+
+# **Ancestral Stories:** In many African cultures, the art of storytelling is passed
+# down from generation to generation. Imagine you're creating an application that
+# records these oral stories and translates them into different languages. The
+# stories vary by length, moral lessons, and the age group they are intended for.
+# Think about how you would model `Story`, `StoryTeller`, and `Translator`
+# objects, and how inheritance might come into play if there are different types of
+# stories or storytellers.
+
+class Story:
+    def __init__(self, title, moral_lesson, age_group, story_length):
+        self.title = title
+        self.moral_lesson = moral_lesson
+        self.age_group = age_group
+        self.story_length = story_length
+    
+    def display_details(self):
+        return f"{self.title} is a story for children who are {self.age_group} years old. It is {self.story_length} long has {self.moral_lesson} moral lessons."
+
+class StoryTeller(Story):
+    def __init__(self, title, moral_lesson, age_group, community_origin, storyteller_name,story_length):
+        
+        # super().__init__(title, moral_lesson, age_group)
+        super().__init__(title, moral_lesson, age_group,story_length)
+
+
+        self.community_origin = community_origin
+        self.storyteller_name = storyteller_name
+
+class Translator(Story):
+    def __init__(self, title, moral_lesson, age_group, story_length, origin_language, new_language):
+
+        # super().__init__(story_length, age_group, moral_lesson)
+        super().__init__(title, moral_lesson, age_group, story_length)
+
+        self.origin_language = origin_language
+        self.new_language = new_language
+        
+        
+
+story = Story("The cat and the mouse", "Greediness", 5, "10 pages")
+print(story.display_details())
+
+storyteller = StoryTeller("The tortoise and the rabbit", "Friendship", 8, "English", "Lilian",200)
+
+
+print(storyteller.display_details())
+print(f"Storyteller Name: {storyteller.storyteller_name}")
+print(f"Community Origin: {storyteller.community_origin}")
+
+
+translator = Translator("Africana", "diversity", 6, "20 pages", "swahili", "English")
+
+print(translator.display_details())
+print(f"Origin Language: {translator.origin_language}")
+print(f"New Language: {translator.new_language}")
+
+
+
 # Question 5
 
 # Create a class called Product with attributes for name, price, and quantity.

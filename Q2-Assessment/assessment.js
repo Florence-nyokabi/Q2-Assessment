@@ -1,3 +1,52 @@
+// QUestion 1
+
+// **Ancestral Stories:** In many African cultures, the art of storytelling is passed
+// down from generation to generation. Imagine you're creating an application that
+// records these oral stories and translates them into different languages. The
+// stories vary by length, moral lessons, and the age group they are intended for.
+// Think about how you would model `Story`, `StoryTeller`, and `Translator`
+// objects, and how inheritance might come into play if there are different types of
+// stories or storytellers.
+
+class StoryTeller extends Story {
+    constructor(title, moral_lesson, age_group, community_origin, storyteller_name, story_length) {
+      super(title, moral_lesson, age_group, story_length);
+      this.community_origin = community_origin;
+      this.storyteller_name = storyteller_name;
+    }
+  }
+ 
+  class Translator extends Story {
+    constructor(title, moral_lesson, age_group, story_length, origin_language, new_language) {
+      super(title, moral_lesson, age_group, story_length);
+      this.origin_language = origin_language;
+      this.new_language = new_language;
+    }
+  }
+ 
+  const story = new Story("The cat and the mouse", "Greediness", 5, "10 pages");
+  console.log(story.display_details());
+ 
+  const storyteller = new StoryTeller("The tortoise and the rabbit", "Friendship", 8, "English", "Lilian", 200);
+ 
+  console.log(storyteller.display_details());
+  console.log(`Storyteller Name: ${storyteller.storyteller_name}`);
+  console.log(`Community Origin: ${storyteller.community_origin}`);
+ 
+  const translator = new Translator("Africana", "diversity", 6, "20 pages", "swahili", "English");
+  console.log(translator.display_details());
+  console.log(`Origin Language: ${translator.origin_language}`);
+  console.log(`New Language: ${translator.new_language}`);
+ 
+
+
+
+
+
+
+
+
+
 // Question 5
 
 // Create a class called Product with attributes for name, price, and quantity.
