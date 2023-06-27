@@ -9,59 +9,68 @@
 # stories or storytellers.
 
 class Story:
-    def __init__(self, title, moral_lesson, age_group, story_length):
-        self.title = title
-        self.moral_lesson = moral_lesson
-        self.age_group = age_group
-        self.story_length = story_length
-    
+    def __init__(self,title,story_length,age_group,moral_lesson):
+        self.title= title
+        self.story_length= story_length
+        self.age_group=range(20)
+        self.moral_lesson=moral_lesson
     def display_details(self):
-        return f"{self.title} is a story for children who are {self.age_group} years old. It is {self.story_length} long has {self.moral_lesson} moral lessons."
+        print("{self.title} is a story for children who are {self.age_group} years old. It is {self.story_length} long and has {self.moral_lesson} moral lessons.")
+    
+    def age_limit(self,age):
+        for age in self.age_group:
+            if age >10:
+                return f"story is inappropriate for children"
+            else:
+                return f"Story is appropriate  for Children."
+                
+first_story=Story("Abebo","45 minutes",30,"be discipline")
+print(first_story.age_limit(10))
 
-class StoryTeller(Story):
-    def __init__(self, title, moral_lesson, age_group, community_origin, storyteller_name,story_length):
-        
-        # super().__init__(title, moral_lesson, age_group)
-        super().__init__(title, moral_lesson, age_group,story_length)
+class  StoryTeller(Story):
+    # def__init__(self,origin_community,teller_name,title,story_length,age_group,moral_lesson)
+    def __init__(self, origin_community, teller_nametitle, story_length, age_group, moral_lesson):
+        super().__init__(title, story_length, age_group, moral_lesson)
 
 
-        self.community_origin = community_origin
-        self.storyteller_name = storyteller_name
-        
+    # super().__init__(title,story_length,age_group,moral_lesson)
+
+    self.origin_community= origin_community
+    self.teller_name = teller_name
+    
+    def time_limit(self,story_limit):
+        if self.story_length==story_limit:
+            return f'Story limit has ended'
+        elif self.story_length<=story_limit:
+                return f'Story is too long'
+        else:
+            return f" Story is too short"
+
+            
+            
+            
+first_storyteller=StoryTeller("Luganda","Wafula","Abebo",30,"40 min","be grateful")
+print(first_storyteller.time_limit(20))
 
 class Translator(Story):
-    def __init__(self, title, moral_lesson, age_group, story_length, origin_language, new_language):
+    def __init__(self,title,story_length,age_group,moral_lesson,origin_laguage,new_language):
+     
+     super().__init__(title,story_length,age_group,moral_lesson)
 
-        # super().__init__(story_length, age_group, moral_lesson)
-        super().__init__(title, moral_lesson, age_group, story_length)
+     self.origin_language=origin_laguage
+     self.new_language= new_language
 
-        self.origin_language = origin_language
-        self.new_language = new_language
+    def language_in(self,lang) :
+        language=["Luo","Swahili","kikuyu","Kamba","Luhya"]   
 
-    def translate(self, origin_language):
-        languages = []
-        for i in languages:
-            if origin_language == i:
-                return f"Translate the story to ${i}"
-        
-
-story = Story("The cat and the mouse", "Greediness", 5, "10 pages")
-print(story.display_details())
-
-storyteller = StoryTeller("The tortoise and the rabbit", "Friendship", 8, "English", "Lilian",200)
-
-
-print(storyteller.display_details())
-print(f"Storyteller Name: {storyteller.storyteller_name}")
-print(f"Community Origin: {storyteller.community_origin}")
-
-
-translator = Translator("Africana", "diversity", 6, "20 pages", "swahili", "English")
-
-print(translator.display_details())
-print(f"Origin Language: {translator.origin_language}")
-print(f"New Language: {translator.new_language}")
-
+        for i in language:
+            if lang ==i:
+             
+             return f"translate to {i}" 
+            else:
+              return  f'{self.origin_language}'
+maureen=Translator("Abebo","40 min",30,"respect your elders","Luganda","kisii")
+print(maureen.language_in("Luo"))
 
 
 # Question 2
@@ -94,7 +103,8 @@ class Recipe:
         print("Step 3:  Add onions, garlic, and peppers in a pot.")
         print("Step 4: Add the chicken")
         print("Step 5: Stir")
-        print("Step 6: Serv.")
+        print("Step 6: Serve.")
+        print("It takes 60 mins.")
         
     def prepare_ethiopian(self):
         print("The Ethiopian recipe is:")
@@ -104,6 +114,7 @@ class Recipe:
         print("Step 4: Add the chicken")
         print("Step 5: Stir")
         print("Step 6: Serve.")
+        print("It takes 70 mins.")
         
     def prepare_moroccan(self):
         print("The Moroccan recipe is:")
@@ -113,8 +124,9 @@ class Recipe:
         print("Step 4: Add the chicken")
         print("Step 5: Stir")
         print("Step 6: Serve.")
-        
-        
+        print("It takes 90 mins.")
+    
+
 country = input("Enter a country: ")
 recipe = Recipe(country)
 recipe.recipe_preparation()

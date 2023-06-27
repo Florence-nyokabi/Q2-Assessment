@@ -40,6 +40,76 @@ class StoryTeller extends Story {
  
 
 
+// Question 2
+// **African Cuisine:** You're creating a recipe app specifically for African cuisine.
+// The app needs to handle recipes from different African countries, each with its
+// unique ingredients, preparation time, cooking method, and nutritional
+// information. Consider creating a `Recipe` class, and think about how you might
+// create subclasses for different types of recipes (e.g., `MoroccanRecipe`,
+// `EthiopianRecipe`, `NigerianRecipe`), each with their own unique properties and
+// methods.
+
+  class Recipe {
+    constructor(country) {
+      this.country = country;
+    }
+  
+    prepare_recipe() {
+      if (this.country === "Morocco") {
+        this.moroccan_recipe();
+      } else if (this.country === "Ethiopia") {
+        this.ethiopian_recipe();
+      } else if (this.country === "Nigeria") {
+        this.nigerian_recipe();
+      } else {
+        console.log("Recipe not available.");
+      }
+    }
+  
+    moroccan_recipe() {
+      console.log("Make a Moroccan recipe.");
+    }
+  
+    ethiopian_recipe() {
+      console.log("Make a Ethiopian recipe.");
+    }
+  
+    nigerian_recipe() {
+      console.log("Make a Nigerian recipe.");
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
