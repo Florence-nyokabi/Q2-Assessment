@@ -78,10 +78,44 @@ class StoryTeller extends Story {
       console.log("Make a Nigerian recipe.");
     }
   }
-  
 
+const country = prompt("Enter a country: ");
+const recipe = new Recipe(country);
+recipe.prepare_recipe();
 
-
+if (country === "Nigeria") {
+    console.log("The Nigerian recipe is:");
+    console.log("Step 1: Gather ingredients");
+    console.log("Step 2: Season the chicken with spices and let it marinate.");
+    console.log("Step 3:  Add onions, garlic, and peppers in a pot.");
+    console.log("Step 4: Add the chicken");
+    console.log("Step 5: Stir");
+    console.log("Step 6: Serve.");
+    console.log("It takes 60 mins.");
+}
+else if(country === "Ethiopia"){
+    console.log("The Ethiopian recipe is:");
+    console.log("Step 1: Gather ingredients");
+    console.log("Step 2: Season the chicken with spices and let it marinate.");
+    console.log("Step 3:  Add onions, garlic, and peppers in a pot.");
+    console.log("Step 4: Add the chicken");
+    console.log("Step 5: Stir");
+    console.log("Step 6: Serve.");
+    console.log("It takes 60 mins.");
+}
+else if(country === "Moroccan"){
+    console.log("The Ethiopian recipe is:");
+    console.log("Step 1: Gather ingredients");
+    console.log("Step 2: Season the chicken with spices and let it marinate.");
+    console.log("Step 3:  Add onions, garlic, and peppers in a pot.");
+    console.log("Step 4: Add the chicken");
+    console.log("Step 5: Stir");
+    console.log("Step 6: Serve.");
+    console.log("It takes 60 mins.");
+}
+else{
+    console.log("Recipe is unavailable");
+}
 
 
 
