@@ -27,6 +27,7 @@ class StoryTeller(Story):
 
         self.community_origin = community_origin
         self.storyteller_name = storyteller_name
+        
 
 class Translator(Story):
     def __init__(self, title, moral_lesson, age_group, story_length, origin_language, new_language):
@@ -36,7 +37,12 @@ class Translator(Story):
 
         self.origin_language = origin_language
         self.new_language = new_language
-        
+
+    def translate(self, origin_language):
+        languages = []
+        for i in languages:
+            if origin_language == i:
+                return f"Translate the story to ${i}"
         
 
 story = Story("The cat and the mouse", "Greediness", 5, "10 pages")
@@ -56,6 +62,62 @@ print(translator.display_details())
 print(f"Origin Language: {translator.origin_language}")
 print(f"New Language: {translator.new_language}")
 
+
+
+# Question 2
+#  **African Cuisine:** 
+# You're creating a recipe app specifically for African cuisine.
+# The app needs to handle recipes from different African countries, each with its
+# unique ingredients, preparation time, cooking method, and nutritional
+# information. Consider creating a `Recipe` class, and think about how you might
+# create subclasses for different types of recipes (e.g., `MoroccanRecipe`,
+# `EthiopianRecipe`, `NigerianRecipe`), each with its own unique properties and
+# methods.
+class Recipe:
+    def __init__(self, country):
+        self.country = country
+
+    def recipe_preparation(self):
+        if self.country == "Nigeria":
+            self.prepare_nigerian()
+        elif self.country == "Ethiopia":
+            self.prepare_ethiopian()
+        elif self.country == "Morocco":
+            self.prepare_moroccan()
+        else:
+            print("Recipe is unavailable.")
+            
+    def prepare_nigerian(self):
+        print("The Nigerian recipe is:")
+        print("Step 1: Gather ingredients")
+        print("Step 2: Season the chicken with spices and let it marinate.")
+        print("Step 3:  Add onions, garlic, and peppers in a pot.")
+        print("Step 4: Add the chicken")
+        print("Step 5: Stir")
+        print("Step 6: Serv.")
+        
+    def prepare_ethiopian(self):
+        print("The Ethiopian recipe is:")
+        print("Step 1: Gather ingredients")
+        print("Step 2: Season the chicken with spices and let it marinate.")
+        print("Step 3:  Add onions, garlic, and peppers in a pot.")
+        print("Step 4: Add the chicken")
+        print("Step 5: Stir")
+        print("Step 6: Serve.")
+        
+    def prepare_moroccan(self):
+        print("The Moroccan recipe is:")
+        print("Step 1: Gather ingredients")
+        print("Step 2: Season the chicken with spices and let it marinate.")
+        print("Step 3:  Add onions, garlic, and peppers in a pot.")
+        print("Step 4: Add the chicken")
+        print("Step 5: Stir")
+        print("Step 6: Serve.")
+        
+        
+country = input("Enter a country: ")
+recipe = Recipe(country)
+recipe.recipe_preparation()
 
 
 # Question 5
