@@ -8,35 +8,35 @@
 // objects, and how inheritance might come into play if there are different types of
 // stories or storytellers.
 
-class StoryTeller extends Story {
-    constructor(title, moral_lesson, age_group, community_origin, storyteller_name, story_length) {
-      super(title, moral_lesson, age_group, story_length);
-      this.community_origin = community_origin;
-      this.storyteller_name = storyteller_name;
-    }
-  }
+// class StoryTeller extends Story {
+//     constructor(title, moral_lesson, age_group, community_origin, storyteller_name, story_length) {
+//       super(title, moral_lesson, age_group, story_length);
+//       this.community_origin = community_origin;
+//       this.storyteller_name = storyteller_name;
+//     }
+  
  
-  class Translator extends Story {
-    constructor(title, moral_lesson, age_group, story_length, origin_language, new_language) {
-      super(title, moral_lesson, age_group, story_length);
-      this.origin_language = origin_language;
-      this.new_language = new_language;
-    }
-  }
+//   class Translator extends Story {
+//     constructor(title, moral_lesson, age_group, story_length, origin_language, new_language) {
+//       super(title, moral_lesson, age_group, story_length);
+//       this.origin_language = origin_language;
+//       this.new_language = new_language;
+//     }
+//   }
  
-  const story = new Story("The cat and the mouse", "Greediness", 5, "10 pages");
-  console.log(story.display_details());
+//   const story = new Story("The cat and the mouse", "Greediness", 5, "10 pages");
+//   console.log(story.display_details());
  
-  const storyteller = new StoryTeller("The tortoise and the rabbit", "Friendship", 8, "English", "Lilian", 200);
+//   const storyteller = new StoryTeller("The tortoise and the rabbit", "Friendship", 8, "English", "Lilian", 200);
+// }
+//   console.log(storyteller.display_details());
+//   console.log(`Storyteller Name: ${storyteller.storyteller_name}`);
+//   console.log(`Community Origin: ${storyteller.community_origin}`);
  
-  console.log(storyteller.display_details());
-  console.log(`Storyteller Name: ${storyteller.storyteller_name}`);
-  console.log(`Community Origin: ${storyteller.community_origin}`);
- 
-  const translator = new Translator("Africana", "diversity", 6, "20 pages", "swahili", "English");
-  console.log(translator.display_details());
-  console.log(`Origin Language: ${translator.origin_language}`);
-  console.log(`New Language: ${translator.new_language}`);
+//   const translator = new Translator("Africana", "diversity", 6, "20 pages", "swahili", "English");
+//   console.log(translator.display_details());
+//   console.log(`Origin Language: ${translator.origin_language}`);
+//   console.log(`New Language: ${translator.new_language}`);
  
 
 
@@ -118,7 +118,62 @@ class Recipe {
   }
   
 
-
+// Question 3
+class Species {
+    constructor(name, diet, lifespan) {
+        this.name = name;
+        this.diet = diet;
+        this.lifespan = lifespan;
+    }
+   
+    getName() {
+        return this.name;
+    }
+   
+    getDiet() {
+        return this.diet;
+    }
+   
+    getLifespan() {
+        return this.lifespan;
+    }
+ }
+ 
+ class Predator extends Species {
+    constructor(name, diet, lifespan, preyList) {
+        super(name, diet, lifespan);
+        this.preyList = preyList;
+    }
+   
+    getPreyList() {
+        return this.preyList;
+    }
+ }
+ 
+ class Prey extends Species {
+    constructor(name, diet, lifespan, predatorList) {
+        super(name, diet, lifespan);
+        this.predatorList = predatorList;
+    }
+   
+    getPredatorList() {
+        return this.predatorList;
+    }
+ }
+ 
+ const cheetah = new Predator("cheetah", "Carnivore", 15, ["Antelope", "Gazelle"]);
+ const antelope = new Prey("antelope", "Herbivore", 20, ["leopard", "Hyena"]);
+ 
+ console.log(cheetah.getName());
+ console.log(cheetah.getDiet());
+ console.log(cheetah.getLifespan());
+ console.log(cheetah.getPreyList());
+ 
+ console.log(antelope.getName());
+ console.log(antelope.getDiet());
+ console.log(antelope.getLifespan());
+ console.log(antelope.getPredatorList());
+ 
 
 
 

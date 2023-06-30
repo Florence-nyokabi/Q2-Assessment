@@ -33,6 +33,136 @@ fun main() {
 }
 
 
+
+
+
+import java.util.Scanner
+
+class Recipe(private val country: String) {
+
+    fun prepareRecipe() {
+        when (country) {
+            "Morocco" -> prepareMoroccanRecipe()
+            "Ethiopia" -> prepareEthiopianRecipe()
+            "Nigeria" -> prepareNigerianRecipe()
+            else -> println("Recipe not available for this country.")
+        }
+    }
+
+    private fun prepareMoroccanRecipe() {
+        println("Preparing Moroccan recipe...")
+    }
+
+    private fun prepareEthiopianRecipe() {
+        println("Preparing Ethiopian recipe...")
+    }
+
+    private fun prepareNigerianRecipe() {
+        println("Preparing Nigerian recipe...")
+    }
+}
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    print("Enter a country (Morocco, Ethiopia, Nigeria): ")
+    val country = scanner.nextLine()
+
+    val recipe = Recipe(country)
+    recipe.prepareRecipe()
+
+    when (country) {
+        "Nigeria" -> {
+            println("The Nigerian recipe is:")
+            println("Step 1: Gather ingredients")
+            println("Step 2: Season the chicken with spices and let it marinate.")
+            println("Step 3: Add onions, garlic, and peppers in a pot.")
+            println("Step 4: Add the chicken")
+            println("Step 5: Stir")
+            println("Step 6: Serve.")
+            println("It takes 60 mins.")
+        }
+        "Ethiopia" -> {
+            println("The Ethiopian recipe is:")
+            println("Step 1: Gather ingredients")
+            println("Step 2: Season the chicken with spices and let it marinate.")
+            println("Step 3: Add onions, garlic, and peppers in a pot.")
+            println("Step 4: Add the chicken")
+            println("Step 5: Stir")
+            println("Step 6: Serve.")
+            println("It takes 60 mins.")
+        }
+        "Morocco" -> {
+            println("The Moroccan recipe is:")
+            println("Step 1: Gather ingredients")
+            println("Step 2: Season the chicken with spices and let it marinate.")
+            println("Step 3: Add onions, garlic, and peppers in a pot.")
+            println("Step 4: Add the chicken")
+            println("Step 5: Stir")
+            println("Step 6: Serve.")
+            println("It takes 60 mins.")
+        }
+        else -> println("Recipe is unavailable")
+    }
+}
+
+
+// Question 3
+open class Species(var name: String, var diet: String, var lifespan: Int) {
+    fun getName(name: String): String {
+        return name
+    }
+
+    fun getDiet(diet: String): String {
+        return diet
+    }
+
+    fun getLifespan(lifespan: Int): Int {
+        return lifespan
+    }
+}
+
+class Predator(name: String, diet: String, lifespan: Int, var preyList: List<String>) : Species(name, diet, lifespan) {
+    fun getPreyList(preyList: List<String>): List<String> {
+        return preyList
+    }
+}
+
+class Prey(name: String, diet: String, lifespan: Int, var predatorList: List<String>) : Species(name, diet, lifespan) {
+    fun getPredatorList(predatorList: List<String>): List<String> {
+        return predatorList
+    }
+}
+
+fun main() {
+    val cheetah = Predator("cheetah", "Carnivore", 15, listOf("Antelope", "Gazelle"))
+    val antelope = Prey("antelope", "Herbivore", 20, listOf("leopard", "Hyena"))
+
+    println(cheetah.getName("Cheetah"))
+    println(cheetah.getDiet("Carnivore"))
+    println(cheetah.getLifespan(15))
+    println(cheetah.getPreyList(listOf("Antelope", "Gazelle")))
+
+    println(antelope.getName("Antelope"))
+    println(antelope.getDiet("Herbivore"))
+    println(antelope.getLifespan(20))
+    println(antelope.getPredatorList(listOf("leopard", "hyena")))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Question 5
 //
 //Create a class called Product with attributes for name, price, and quantity.
