@@ -11,9 +11,9 @@
 // class StoryTeller extends Story {
 //     constructor(title, moral_lesson, age_group, community_origin, storyteller_name, story_length) {
 //       super(title, moral_lesson, age_group, story_length);
-//       this.community_origin = community_origin;
-//       this.storyteller_name = storyteller_name;
-//     }
+      this.community_origin = community_origin;
+      this.storyteller_name = storyteller_name;
+    }
   
  
 //   class Translator extends Story {
