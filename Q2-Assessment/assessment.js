@@ -8,10 +8,10 @@
 // objects, and how inheritance might come into play if there are different types of
 // stories or storytellers.
 
-// class StoryTeller extends Story {
-//     constructor(title, moral_lesson, age_group, community_origin, storyteller_name, story_length) {
-//       super(title, moral_lesson, age_group, story_length);
-      this.community_origin = community_origin;
+// // class StoryTeller extends Story {
+// //     constructor(title, moral_lesson, age_group, community_origin, storyteller_name, story_length) {
+// //       super(title, moral_lesson, age_group, story_length);
+//       this.community_origin = community_origin;
       this.storyteller_name = storyteller_name;
     }
   
